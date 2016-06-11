@@ -1,0 +1,11 @@
+package: github.com/mackerelio/mackerel-agent
+import:
+- package: github.com/BurntSushi/toml
+- package: github.com/Songmu/prompter
+- package: github.com/Songmu/retry
+- package: github.com/Songmu/timeout
+- package: github.com/motemen/go-cli
+- package: golang.org/x/sys
+  subpackages:
+  - windows/svc
+  - windows/svc/eventlog

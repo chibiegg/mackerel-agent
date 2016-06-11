@@ -18,3 +18,5 @@ packaging/rpm-build
 /mackerel-agent.conf
 
 commands_gen.go
+
+vendor/

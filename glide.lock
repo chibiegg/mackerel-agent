@@ -1,0 +1,28 @@
+hash: 01dbd7687d4bcac42514ff5e017af8d1de1d9e6390fecffaa81677c02922901b
+updated: 2016-06-12T01:07:42.189378565+09:00
+imports:
+- name: github.com/BurntSushi/toml
+  version: f0aeabca5a127c4078abb8c8d64298b147264b55
+- name: github.com/mattn/go-isatty
+  version: 56b76bdf51f7708750eac80fa38b952bb9f32639
+- name: github.com/motemen/go-cli
+  version: c859ad8358c0914bb6f913c49a0b3e84b7543f33
+- name: github.com/Songmu/prompter
+  version: f49666b0047d12850875d771340e1d862d9e7a0c
+- name: github.com/Songmu/retry
+  version: 19234d8a98212dc3a5e50d7defcf92805255eb54
+- name: github.com/Songmu/timeout
+  version: 84831c43cf48f6b1d52c64ed499d714ffd62eca1
+- name: golang.org/x/crypto
+  version: 77f4136a99ffb5ecdbdd0226bd5cb146cf56bc0e
+  subpackages:
+  - ssh/terminal
+- name: golang.org/x/sys
+  version: 7f918dd405547ecb864d14a8ecbbfe205b5f930f
+  subpackages:
+  - windows/svc
+  - windows/svc/eventlog
+  - windows
+  - windows/registry
+  - unix
+devImports: []
