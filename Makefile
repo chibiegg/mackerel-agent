@@ -21,7 +21,7 @@ check-variables:
 all: clean test build
 
 test: lint
-	go test -v -short $(TESTFLAGS) ./...
+	go test -v -short $(TESTFLAGS) $$(glide nv)
 
 build: deps
 	go build -ldflags=$(BUILD_LDFLAGS) \
@@ -42,7 +42,6 @@ update:
 	glide update
 
 lint: deps
-	go tool vet -all -printfuncs=Criticalf,Infof,Warningf,Debugf,Tracef .
 	_tools/go-linter $(BUILD_OS_TARGETS)
 
 crossbuild: deps
@@ -51,7 +50,7 @@ crossbuild: deps
 	    -os="linux darwin freebsd netbsd" -arch="386 amd64 arm" -d . -n $(MACKEREL_AGENT_NAME)
 
 cover: deps
-	gotestcover -v -short -covermode=count -coverprofile=.profile.cov -parallelpackages=4 ./...
+	gotestcover -v -short -covermode=count -coverprofile=.profile.cov -parallelpackages=4 $$(glide nv -x | grep -v wix)
 
 rpm:
 	GOOS=linux GOARCH=386 make build
