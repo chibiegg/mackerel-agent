@@ -31,11 +31,15 @@ run: build
 	./build/$(MACKEREL_AGENT_NAME) $(ARGS)
 
 deps: generate
-	go get -d -v -t ./...
+	go get github.com/Masterminds/glide
+	glide install
 	go get github.com/golang/lint/golint
 	go get github.com/pierrre/gotestcover
 	go get github.com/laher/goxc
 	go get github.com/mattn/goveralls
+
+update:
+	glide update
 
 lint: deps
 	go tool vet -all -printfuncs=Criticalf,Infof,Warningf,Debugf,Tracef .
